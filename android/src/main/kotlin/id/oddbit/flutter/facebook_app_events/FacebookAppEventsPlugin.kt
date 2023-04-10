@@ -196,7 +196,7 @@ class FacebookAppEventsPlugin: FlutterPlugin, MethodCallHandler {
     val parameters = call.argument("parameters") as? Map<String, Object>
     val parameterBundle = createBundleFromMap(parameters) ?: Bundle()
 
-    appEventsLogger.logPurchase(amount, currency, parameterBundle)
+    appEventsLogger?.logPurchase(amount, currency, parameterBundle)
     result.success(null)
   }
 }
